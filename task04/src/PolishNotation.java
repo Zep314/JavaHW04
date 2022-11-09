@@ -23,7 +23,7 @@ class PolishNotation {
         }
 
         // разворачиваем список в польскую нотацию
-
+        // https://habr.com/ru/post/489744/
         return ret.toString();
     }
 }
