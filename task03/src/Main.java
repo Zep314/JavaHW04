@@ -13,7 +13,8 @@ public class Main {
         String saveString = "";
         String inputString = "";
         cmd.Set("");
-        while (true) {
+        boolean ex = false;
+        while (!ex) {
 
             System.out.print(">>> ");
             try {
@@ -26,7 +27,8 @@ public class Main {
                 case "/quit": {
                     //inp.close();
                     System.out.printf("Работа завершена\n");
-                    System.exit(-1);
+                    ex = true;
+                    break;
                 }
                 case "/rollback": {
                     cmd.Set(saveString);

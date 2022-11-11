@@ -82,7 +82,7 @@ class PolishNotation {  // Класс для работы с польской з
         List<String> queue = new ArrayList<>();
         for(String s: polString
                         .replaceAll("\\[","") //убираем символы [ и ] и делим строку - формируем список
-                        .replaceAll("\\]","")
+                        .replaceAll("]","")
                         .split(",")) {
             queue.add(s.trim());  // могут попасться пробелы
         }
@@ -95,27 +95,27 @@ class PolishNotation {  // Класс для работы с польской з
                 String a = stack.remove(0);
                 String result;
                 switch (s) {  // вычисляем элементарную операцию
-                    case "^": {
+                    case "^" -> {
                         result = Double.toString(Math.pow(Double.parseDouble(a), Double.parseDouble(b)));
                         break;
                     }
-                    case "*": {
+                    case "*" -> {
                         result = Double.toString(Double.parseDouble(a) * Double.parseDouble(b));
                         break;
                     }
-                    case "/": {
+                    case "/" -> {
                         result = Double.toString(Double.parseDouble(a) / Double.parseDouble(b));
                         break;
                     }
-                    case "+": {
+                    case "+" -> {
                         result = Double.toString(Double.parseDouble(a) + Double.parseDouble(b));
                         break;
                     }
-                    case "-": {
+                    case "-" -> {
                         result = Double.toString(Double.parseDouble(a) - Double.parseDouble(b));
                         break;
                     }
-                    default: {  // такого быть не должно, но вдруг...
+                    default -> {  // такого быть не должно, но вдруг...
                         result = "";
                         break;
                     }

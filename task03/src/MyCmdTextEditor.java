@@ -17,27 +17,7 @@ public class MyCmdTextEditor {
         cursorY = 2;
         //KeyEvent ke = new KeyEvent();
         Scanner inp = new Scanner(System.in);
-
-        System.out.print(data.toString());
-//        int key;
-//        boolean ex = false;
-//        while (!ex) {
-//            //key = System.in.key
-//            switch (key) {
-//                case 13: {
-//                    ex =true;
-//                    break;
-//                }
-//                default: {
-//                    data.insert(cursor,(char)key);
-//                    cursor++;
-//                    setCursorPosition(cursorX,cursorY);
-//                    System.out.print(data.toString());
-//                    break;
-//                }
-//            }
-//        }
-
+//        System.out.print(data.toString());
         String s = inp.nextLine();//data.toString();
         data.setLength(0);
         data.append(s);
@@ -48,10 +28,5 @@ public class MyCmdTextEditor {
         data.setLength(0);
         data.append(input);
         cursor = data.length();
-    }
-
-    public static void setCursorPosition(int x, int y) {
-        final char escCode = 0x1B;
-        System.out.print(String.format("%c[%d;%df", escCode, y, x));
     }
 }
